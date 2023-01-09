@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Kanit:ital,wght@1,100&family=Raleway:wght@900&family=Rationale&display=swap");
+
+#root,
+.App {
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #101020;
+  height: 100vh;
+}
+
+.cards {
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  position: relative;
+  background-color: #101020;
+  min-height: 300px;
+}
+
+.card-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.card:nth-child(1) .card-bg {
+  background-image: url(../public/person-in-front-of-space.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 70%;
+  opacity: 0.3;
+}
+
+.card:nth-child(2) .card-bg {
+  background-image: url(../public/space.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.card .title {
+  font-family: "Raleway", sans-serif;
+  font-size: 2.7em;
+}
+
+.card .subtitle {
+  font-family: "Rationale", sans-serif;
+  font-size: 1.2em;
+  opacity: 0.8;
+  letter-spacing: 0.1em;
+}
+
+.card .content {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.2em;
+  z-index: 10;
+  letter-spacing: 0.2em;
+  background-color: #0505105f;
+}
+
+.card:nth-child(1) .title-wrapper {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+.card:nth-child(2) .title-wrapper {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+}
+
+@media (max-width: 1440px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .card:nth-child(1) .title-wrapper,
+  .card:nth-child(2) .title-wrapper {
+    position: static;
+  }
+}
